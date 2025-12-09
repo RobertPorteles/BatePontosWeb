@@ -1,0 +1,114 @@
+<div class="mat-elevation-z8 container-tabelas">
+
+	<h3>Registro de Funcionario</h3>
+  <table mat-table [dataSource]="dataSourceFuncionario">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let funcio"> {{funcio.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let funcio"> {{funcio.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email
+      </th> <td mat-cell *matCellDef="let funcio"> {{funcio.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cargo">
+      <th mat-header-cell *matHeaderCellDef> Cargo </th>
+      <td mat-cell *matCellDef="let funcio"> {{funcio.cargo}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumnFuncionario"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumnFuncionario;"></tr>
+  </table>
+
+  <mat-paginator #Funcionario
+                 [pageSizeOptions]="[5, 10, 20]" 
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+  
+  <h3>Registro de Pontos</h3>
+  <table mat-table [dataSource]="dataSourcePontos">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let ponto"> {{ponto.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let ponto"> {{ponto.descricao}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let ponto"> {{ponto.data}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef> Hora </th>
+      <td mat-cell *matCellDef="let ponto"> {{ponto.hora}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="funcionarios_id">
+      <th mat-header-cell *matHeaderCellDef> Func. ID </th>
+      <td mat-cell *matCellDef="let ponto"> {{ponto.funcionarios_id}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumnPonto"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumnPonto;"></tr>
+  </table>
+
+  <mat-paginator #Pontos 
+                 [pageSizeOptions]="[5, 10, 20]" 
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+  <br><hr><br>
+
+  <h3>Localização</h3>
+  <table mat-table [dataSource]="dataSourceLocalizacao">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let localizacao"> {{localizacao.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef> Latitude </th>
+      <td mat-cell *matCellDef="let localizacao"> {{localizacao.latitude}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="longitude">
+      <th mat-header-cell *matHeaderCellDef> Longitude </th>
+      <td mat-cell *matCellDef="let localizacao"> {{localizacao.longitude}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let localizacao"> {{localizacao.descricao}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ponto_id">
+      <th mat-header-cell *matHeaderCellDef> Ponto ID </th>
+      <td mat-cell *matCellDef="let localizacao"> {{localizacao.ponto_id}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumnLocalizacao"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumnLocalizacao;"></tr>
+  </table>
+
+  <mat-paginator #Localizacao 
+                 [pageSizeOptions]="[5, 10, 20]" 
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+</div>

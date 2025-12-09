@@ -1,0 +1,108 @@
+/* --- Container Principal (Estilo Card) --- */
+.container-tabelas {
+  max-width: 1400px;
+  width: 95%; /* Um pouco de respiro nas laterais em telas grandes */
+  margin: 30px auto;
+  padding: 0; /* O padding interno será controlado pelos elementos filhos */
+  
+  /* Visual de Cartão */
+  background: #fff;
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra suave e moderna */
+  overflow: hidden; /* Garante que o conteúdo não vaze das bordas arredondadas */
+}
+
+/* --- Títulos --- */
+.container-tabelas h3 {
+  text-align: left; /* Títulos alinhados à esquerda ficam mais profissionais em cards */
+  margin: 0;
+  padding: 24px 24px 10px; /* Espaçamento interno */
+  font-size: 20px;
+  font-weight: 600;
+  color: #333; /* Cinza escuro para melhor leitura */
+  letter-spacing: 0.5px;
+}
+
+/* --- Wrapper para Scroll (Responsividade) --- */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  /* Suavidade no scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Tabela Base --- */
+.container-tabelas table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre bordas */
+  min-width: 600px; /* Garante que não quebre em telas muito pequenas */
+}
+
+/* --- Cabeçalho da Tabela (Header) --- */
+.container-tabelas th.mat-header-cell {
+  background-color: #f8f9fa; /* Fundo cinza bem claro */
+  color: #5f6368; /* Texto cinza médio */
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase; /* Letras maiúsculas para hierarquia */
+  padding: 16px 24px;
+  border-bottom: 2px solid #e0e0e0;
+  white-space: nowrap; /* Evita quebra de linha no título */
+}
+
+/* --- Células do Corpo --- */
+.container-tabelas td.mat-cell {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- Efeito Hover nas Linhas --- */
+.container-tabelas tr.mat-row:hover {
+  background-color: #f1f3f4; /* Destaque ao passar o mouse */
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+/* --- Paginador --- */
+.container-tabelas mat-paginator {
+  background: transparent;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* --- Separador (Se houver) --- */
+.container-tabelas hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 0;
+}
+
+/* --- Scrollbar Personalizado (Webkit) --- */
+/* Deixa a barra de rolagem horizontal mais bonita */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* --- Responsividade --- */
+@media screen and (max-width: 768px) {
+  .container-tabelas h3 {
+    padding: 20px 16px 5px;
+  }
+
+  .container-tabelas th.mat-header-cell,
+  .container-tabelas td.mat-cell {
+    padding: 12px 16px; /* Reduz espaçamento lateral no mobile */
+  }
+}
