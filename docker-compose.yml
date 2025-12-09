@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # JSON Server
+  json-server:
+    image: node:20-alpine
+    container_name: json-server
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./db.json:/app/db.json
+    command: npx json-server --watch db.json --host 0.0.0.0 --port 3000
+    networks:
+      - app-network
+
+  # Angular App
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: angular-app
+    ports:
+      - "8080:80"
+    depends_on:
+      - json-server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
