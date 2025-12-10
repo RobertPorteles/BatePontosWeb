@@ -4,7 +4,7 @@ import { Log } from './core/components/log/log';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Log],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
