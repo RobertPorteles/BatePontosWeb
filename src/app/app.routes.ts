@@ -1,9 +1,17 @@
 import { Routes } from '@angular/router';
-import { Log } from './core/components/log/log';
+import { Log } from './module/bateponto/components/pages/log/log';
+
 
 export const routes: Routes = [
 
+
 	{
-		path: "app-log", component: Log
+		path: 'bateponto',
+		loadChildren: () => import(
+			'./module/bateponto/bateponto.module').then(
+				m => m.batePontoModule)
+	},
+	{
+		path: '', pathMatch: 'full', redirectTo: 'bateponto/login'
 	}
 ];

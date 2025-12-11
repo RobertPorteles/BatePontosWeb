@@ -5,15 +5,16 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { Funcionario } from '../../models/funcionario';
-import { Localizacao } from '../../models/localizacao';
-import { PontoService } from '../../services/ponto-service';
-import { Ponto } from '../../models/ponto';
+import { Funcionario } from '../../../core/models/funcionario';
+import { Localizacao } from '../../../core/models/localizacao';
+import { PontoService } from '../../../core/services/ponto-service';
+import { Ponto } from '../../../core/models/ponto';
 
 @Component({
   selector: 'app-log',
   imports: [CommonModule, MatPaginatorModule, MatTableModule, MatCardModule, MatIconModule, MatButtonModule],
   templateUrl: './log.html',
+  standalone: true,
   styleUrl: './log.css',
 })
 export class Log implements OnInit, AfterViewInit {
