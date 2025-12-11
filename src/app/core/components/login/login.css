@@ -1,0 +1,48 @@
+/* 1. O container pai (o próprio componente) define o palco */
+:host {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  min-height: 100vh;       /* Força a altura a ocupar 100% da tela visível */
+  box-sizing: border-box;  
+  background-color: #f5f5f5; /* (Opcional) Cor de fundo para ver melhor o formulário */
+}
+
+/* 2. O seu container do formulário */
+.example-container {
+  display: flex;
+  flex-direction: column; /* MÁGICA: Coloca os itens um EMBAIXO do outro */
+  
+  /* Responsividade */
+  width: 90%;             /* Ocupa 90% da largura em celulares */
+  max-width: 400px;       /* Mas trava em 400px em telas grandes para não ficar esticado */
+  
+  /* Espaçamento e Estilo */
+  gap: 16px;              /* Espaço entre o email e a senha */
+  padding: 24px;
+  background: white;      /* Fundo branco do cartão */
+  border-radius: 8px;     /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra leve */
+}
+
+/* 3. Força os inputs a preencherem a largura do container */
+.input, .input-senha {
+  width: 100%;
+}
+
+section {
+  display: flex;        /* A mágica: coloca os filhos (divs) lado a lado */
+  gap: 16px;            /* Espaço entre o botão de Login e Cadastro */
+  width: 100%;          /* Garante que a seção ocupe a largura toda do formulário */
+  margin-top: 16px;     /* Dá um respiro em relação ao campo de senha */
+}
+
+/* Opcional: Faz os botões ocuparem 50% do espaço cada um (fica mais bonito) */
+section > div {
+  flex: 1;              /* Cada div vai crescer para ocupar espaços iguais */
+}
+
+/* Garante que o botão estique dentro da div */
+button {
+  width: 100%;
+}

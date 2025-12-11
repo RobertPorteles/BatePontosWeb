@@ -10,6 +10,12 @@ $theme: mat.define-theme((
   ),
 ));
 
+:root {
+  @include mat.form-field-overrides((
+    container-text-size: 16px
+  ));
+}
+
 html {
   @include mat.all-component-themes($theme);
 }
